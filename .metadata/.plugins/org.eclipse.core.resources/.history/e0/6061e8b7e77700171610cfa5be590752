@@ -1,0 +1,8 @@
+package br.com.fiap.scj;
+
+import javax.servlet.http.HttpServlet;
+
+public class SucessoServlet extends HttpServlet {
+	
+
+}

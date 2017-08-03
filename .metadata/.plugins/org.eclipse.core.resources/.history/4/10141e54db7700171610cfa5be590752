@@ -1,0 +1,9 @@
+package br.com.fiap.scj;
+
+import javax.servlet.http.HttpServlet;
+
+public class MinhaPrimeiraServlet extends HttpServlet {
+
+	private static final long serialVersionUID = 1701830156840732811L;
+
+}

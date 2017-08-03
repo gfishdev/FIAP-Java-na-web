@@ -1,0 +1,38 @@
+package br.com.fiap.scj;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class FormularioServlet extends HttpServlet{
+
+	private static final long serialVersionUID = -755116070470384495L;
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String name = req.getParameter("Name");
+		String email = req.getParameter("Email");
+		String message = req.getParameter("Message");
+		
+		try{
+			BufferedWriter writer = null;
+			File logFile = new File("./informacoes-"+name+".txt");
+			writer = new BufferedWriter(new FileWriter(logFile));
+		    // PrintWriter writer = new PrintWriter("informacoes-"+name+".txt", "UTF-8");
+		    writer.write("Name: " + name);
+		    writer.write("E-mail: " + email);
+		    writer.write("Message: " + message);
+		    writer.close();
+		    resp.getWriter().append("<h1>Enviado com sucesso!</h1>");
+		} catch (IOException e) {
+			resp.getWriter().append("<h1>Ocorreu um erro na sua requisição, tente novamente mais tarde!</h1>");
+		}
+	}
+
+}
