@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/sucesso")
 public class SucessoServlet extends HttpServlet {
@@ -17,5 +18,8 @@ public class SucessoServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		PrintWriter out = resp.getWriter();
 		out.append("Operação executada com sucesso!");
+		
+		HttpSession session = req.getSession(true);
+		session.setAttribute("id", 1);
 	}
 }
