@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<head>
+<title>Cadastro</title>
+<style>
+	.labelFor {
+		font-weight: bold;
+	}
+</style>
+</head>
+<body>
+	<h:form>
+		<p>
+			<h:outputLabel styleClass="labelFor" value="Nome: " for="txtNome" />
+			<h:inputText id="txtNome" value="#{cardapioMBean.nome}" required="true" requiredMessage="Nome Obrigatorio"/>
+		</p>
+		<p>
+			<h:outputLabel styleClass="labelFor" value="Valor: " for="txtValor" />
+			<h:inputText converterId="javax.faces.Double" id="txtValor" value="#{cardapioMBean.valor}" required="true" requiredMessage="Valor Obrigatorio" />
+		</p>
+		<p>
+			<h:outputLabel styleClass="labelFor" value="Tipo: " for="lstTipo" />
+			<h:selectOneMenu id="lstTipo" value="#{cardapioMBean.tipoSelecionado}" required="true">
+				<f:selectItems value="#{cardapioMBean.tipos}" />
+			</h:selectOneMenu>
+		</p>
+
+		<h:commandButton value="Salvar" action="#{cardapioMBean.salvar}" />
+		<h:messages />
+	</h:form>
+</body>
+</html>
