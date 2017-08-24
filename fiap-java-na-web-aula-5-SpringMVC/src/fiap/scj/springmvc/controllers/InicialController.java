@@ -1,4 +1,4 @@
-package br.com.fiap.springmvc.controllers;
+package fiap.scj.springmvc.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class InicialController {
 	@RequestMapping("/")
 	public String paginaInicial(Model m) {
-		m.addAttribute("mensagem", "seja bem vindo");
+		m.addAttribute("mensagem","seja bem vindo");
 		return "index";
 	}
 }

@@ -1,4 +1,4 @@
-package br.com.fiap.springmvc.bean;
+package fiap.scj.springmvc.bean;
 
 public class Aluno {
 

@@ -1,11 +1,11 @@
-package br.com.fiap.springmvc.controllers;
+package fiap.scj.springmvc.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import br.com.fiap.springmvc.bean.Aluno;
+import fiap.scj.springmvc.bean.Aluno;
 
 @Controller
 public class AlunoController {
